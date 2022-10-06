@@ -89,6 +89,9 @@ use_async:
 use_drf:
     Indicates whether the project should be configured to use `Django Rest Framework`_.
 
+use_rest_firebase_auth:
+    Indicates whether the project should be configured to use `Firebase Authentication` in `Django Rest Framework`_.
+
 frontend_pipeline:
     Select a pipeline to compile and optimise frontend assets (JS, CSS, ...):
 

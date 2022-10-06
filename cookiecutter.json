@@ -42,6 +42,7 @@
   ],
   "use_async": "n",
   "use_drf": "n",
+  "use_rest_firebase_auth": "n",
   "frontend_pipeline": [
     "None",
     "Django Compressor",

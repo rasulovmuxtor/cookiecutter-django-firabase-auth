@@ -85,7 +85,9 @@ THIRD_PARTY_APPS = [
 {%- endif %}
 {%- if cookiecutter.use_drf == "y" %}
     "rest_framework",
+{%- if cookiecutter.use_rest_firebase_auth == "n" %}
     "rest_framework.authtoken",
+{%- endif %}
     "corsheaders",
     "drf_spectacular",
 {%- endif %}
@@ -330,7 +332,12 @@ STATICFILES_FINDERS += ["compressor.finders.CompressorFinder"]
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.SessionAuthentication",
+        {% if cookiecutter.use_rest_firebase_auth == "y" -%}
+        "config.firebase_auth.FirebaseAuthentication",
+        {% else -%}
         "rest_framework.authentication.TokenAuthentication",
+        {%- endif %}
+
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",

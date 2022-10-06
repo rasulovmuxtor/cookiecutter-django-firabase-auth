@@ -69,3 +69,9 @@ REDIS_URL=redis://redis:6379/0
 CELERY_FLOWER_USER=!!!SET CELERY_FLOWER_USER!!!
 CELERY_FLOWER_PASSWORD=!!!SET CELERY_FLOWER_PASSWORD!!!
 {% endif %}
+
+{%- if cookiecutter.use_rest_firebase_auth == 'y' %}
+# FIREBASE CREDENTIALS
+# ------------------------------------------------------------------------------
+FIREBASE_CREDENTIALS_PATH=.envs/local/firebase_credentials.json
+{%- endif %}

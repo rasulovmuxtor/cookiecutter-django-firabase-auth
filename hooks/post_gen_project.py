@@ -412,6 +412,8 @@ def main():
 
     if "{{ cookiecutter.use_drf }}".lower() == "n":
         remove_drf_starter_files()
+    elif "{{ cookiecutter.use_rest_firebase_auth }}".lower() == "n":
+        remove_rest_firebase_auth_starter_files()
 
     if "{{ cookiecutter.use_async }}".lower() == "n":
         remove_async_files()
