@@ -21,7 +21,7 @@ CELERY_FLOWER_PASSWORD=!!!SET CELERY_FLOWER_PASSWORD!!!
 {%- if cookiecutter.use_rest_firebase_auth == 'y' %}
 # FIREBASE CREDENTIALS
 # ------------------------------------------------------------------------------
-FIREBASE_CREDENTIALS_PATH=.envs/local/firebase_credentials.json
+FIREBASE_CREDENTIALS_PATH=.envs/.local/firebase_credentials.json
 {%- endif %}
 
 {%- if cookiecutter.create_admin == 'y' %}

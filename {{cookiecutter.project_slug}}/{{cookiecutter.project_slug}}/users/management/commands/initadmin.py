@@ -11,7 +11,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         username = os.getenv('ADMIN_USERNAME').strip()
         username_mapping = {User.USERNAME_FIELD: username}
-        if not User.objects.exists(**username_mapping):
+        if not User.objects.filter(**username_mapping).exists():
             password = os.getenv('ADMIN_PASSWORD').strip()
             user = User.objects.create_superuser(
                 **username_mapping, password=password)
