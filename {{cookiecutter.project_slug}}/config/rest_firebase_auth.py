@@ -8,6 +8,7 @@ from firebase_admin import auth
 from firebase_admin import credentials
 from rest_framework import authentication
 from rest_framework import exceptions
+
 User = get_user_model()
 
 from rest_framework import status
@@ -32,8 +33,10 @@ class FirebaseError(APIException):
     default_code = "no_firebase_uid"
 
 
-cred = credentials.Certificate(os.path.join(settings.BASE_DIR, os.getenv('FIREBASE_CREDENTIALS_PATH')))
+cred = credentials.Certificate(
+    os.path.join(settings.BASE_DIR, os.getenv('FIREBASE_CREDENTIALS_PATH')))
 default_app = firebase_admin.initialize_app(cred)
+
 
 class FirebaseAuthentication(authentication.BaseAuthentication):
     def authenticate(self, request):
@@ -55,5 +58,7 @@ class FirebaseAuthentication(authentication.BaseAuthentication):
         except Exception:
             raise FirebaseError()
 
-        user, created = User.objects.get_or_create(User.USERNAME_FIELD=uid)
+        user, created = User.objects.get_or_create(
+            **{User.USERNAME_FIELD: uid}
+        )
         return user

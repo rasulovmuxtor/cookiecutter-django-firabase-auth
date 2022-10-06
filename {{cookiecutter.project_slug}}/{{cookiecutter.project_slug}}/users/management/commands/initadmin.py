@@ -10,15 +10,15 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         username = os.getenv('ADMIN_USERNAME').strip()
-        USERNAME_FIELD = User.USERNAME_FIELD
-        if not User.objects.exists(USERNAME_FIELD=username):
+        username_mapping = {User.USERNAME_FIELD: username}
+        if not User.objects.exists(**username_mapping):
             password = os.getenv('password').strip()
             user = User.objects.create_superuser(
-                User.USERNAME_FIELD = username, password = password)
+                **username_mapping, password=password)
             user.is_active = True
             user.is_admin = True
             user.save()
-            print(f'Created account with `{username}` {USERNAME_FIELD}')
+            print(f'Created account with `{username}` {User.USERNAME_FIELD}')
 
         else:
             print(
