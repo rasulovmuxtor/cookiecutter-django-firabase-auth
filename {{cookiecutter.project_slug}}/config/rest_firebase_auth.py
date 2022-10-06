@@ -33,8 +33,7 @@ class FirebaseError(APIException):
     default_code = "no_firebase_uid"
 
 
-cred = credentials.Certificate(
-    os.path.join(settings.ROOT_DIR, os.getenv('FIREBASE_CREDENTIALS_PATH')))
+cred = credentials.Certificate(os.getenv('FIREBASE_CREDENTIALS_PATH'))
 default_app = firebase_admin.initialize_app(cred)
 
 

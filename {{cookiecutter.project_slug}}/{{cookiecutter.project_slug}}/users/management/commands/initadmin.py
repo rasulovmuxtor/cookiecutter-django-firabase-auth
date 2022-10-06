@@ -12,7 +12,7 @@ class Command(BaseCommand):
         username = os.getenv('ADMIN_USERNAME').strip()
         username_mapping = {User.USERNAME_FIELD: username}
         if not User.objects.exists(**username_mapping):
-            password = os.getenv('password').strip()
+            password = os.getenv('ADMIN_PASSWORD').strip()
             user = User.objects.create_superuser(
                 **username_mapping, password=password)
             user.is_active = True
