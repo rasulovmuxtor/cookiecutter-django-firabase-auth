@@ -146,6 +146,7 @@ Answer the prompts with your own desired [options](http://cookiecutter-django.re
     use_async [n]: n
     use_drf [n]: y
     use_rest_firebase_auth [n]: y
+    create_admin [n]: y
     Select frontend_pipeline:
     1 - None
     2 - Django Compressor

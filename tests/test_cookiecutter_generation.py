@@ -87,6 +87,8 @@ SUPPORTED_COMBINATIONS = [
     {"use_async": "n"},
     {"use_drf": "y"},
     {"use_drf": "n"},
+    {"create_admin": "y"},
+    {"create_admin": "n"},
     {"use_rest_firebase_auth": "y"},
     {"use_rest_firebase_auth": "n"},
     {"frontend_pipeline": "None"},

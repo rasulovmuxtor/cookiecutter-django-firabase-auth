@@ -47,7 +47,7 @@ django-cors-headers==3.13.0 # https://github.com/adamchainz/django-cors-headers
 drf-spectacular==0.24.2  # https://github.com/tfranzel/drf-spectacular
 
 {%- if cookiecutter.use_rest_firebase_auth == 'y' %}
-firebase admin sdk
+# firebase admin sdk
 firebase-admin==5.4.0  # https://firebase.google.com/docs/admin/setup/
 {%- endif %}
 

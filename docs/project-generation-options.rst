@@ -92,6 +92,9 @@ use_drf:
 use_rest_firebase_auth:
     Indicates whether the project should be configured to use `Firebase Authentication` in `Django Rest Framework`_.
 
+create_admin:
+    Creates an admin in first launch. so, you could enter the Django admin after an initial start.
+
 frontend_pipeline:
     Select a pipeline to compile and optimise frontend assets (JS, CSS, ...):
 

@@ -35,9 +35,9 @@ urlpatterns += [
     # API base url
     path("api/", include("config.api_router")),
     # DRF auth token
-    { % if cookiecutter.use_rest_firebase_auth == 'n' %}
-    path("auth-token/", obtain_auth_token),
-    {% - endif %}
+    {% if cookiecutter.use_rest_firebase_auth == 'n' %}
+        path("auth-token/", obtain_auth_token),
+    {% endif %}
     path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),
     path(
         "api/docs/",

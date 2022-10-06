@@ -43,6 +43,7 @@
   "use_async": "n",
   "use_drf": "n",
   "use_rest_firebase_auth": "n",
+  "create_admin": "n",
   "frontend_pipeline": [
     "None",
     "Django Compressor",

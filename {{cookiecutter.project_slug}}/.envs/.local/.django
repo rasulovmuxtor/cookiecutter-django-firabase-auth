@@ -23,3 +23,10 @@ CELERY_FLOWER_PASSWORD=!!!SET CELERY_FLOWER_PASSWORD!!!
 # ------------------------------------------------------------------------------
 FIREBASE_CREDENTIALS_PATH=.envs/local/firebase_credentials.json
 {%- endif %}
+
+{%- if cookiecutter.create_admin == 'y' %}
+# ADMIN CREDENTIALS
+# ------------------------------------------------------------------------------
+ADMIN_USERNAME=superadmin
+ADMIN_PASSWORD=PassWord@123
+{%- endif %}
