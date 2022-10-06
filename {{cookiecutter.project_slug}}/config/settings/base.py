@@ -333,7 +333,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.SessionAuthentication",
         {% if cookiecutter.use_rest_firebase_auth == "y" -%}
-        "config.firebase_auth.FirebaseAuthentication",
+        "config.rest_firebase_auth.FirebaseAuthentication",
         {% else -%}
         "rest_framework.authentication.TokenAuthentication",
         {%- endif %}
