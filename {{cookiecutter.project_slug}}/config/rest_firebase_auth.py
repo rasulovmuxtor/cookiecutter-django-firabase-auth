@@ -34,7 +34,7 @@ class FirebaseError(APIException):
 
 
 cred = credentials.Certificate(
-    os.path.join(settings.BASE_DIR, os.getenv('FIREBASE_CREDENTIALS_PATH')))
+    os.path.join(settings.ROOT_DIR, os.getenv('FIREBASE_CREDENTIALS_PATH')))
 default_app = firebase_admin.initialize_app(cred)
 
 
